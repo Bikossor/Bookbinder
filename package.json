@@ -1,0 +1,28 @@
+{
+  "name": "bookbinder",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bikossor/Bookbinder.git"
+  },
+  "keywords": [
+    "readme",
+    "markdown",
+    "bookbinder",
+    "book",
+    "binder",
+    "transform",
+    "replace"
+  ],
+  "author": "André Lichtenthäler",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Bikossor/Bookbinder/issues"
+  },
+  "homepage": "https://github.com/Bikossor/Bookbinder#readme"
+}
