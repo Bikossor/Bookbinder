@@ -1,4 +1,4 @@
 # Bookbinder
 
-{{ foo }}
-{{bar}}
+{{ date }}
+{{time}}
