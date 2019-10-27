@@ -1,6 +1,4 @@
-import { IModule } from "../Interfaces/IModule";
-import { IFile } from "../Interfaces/IFile";
-import { ITransformResult } from "../Interfaces/ITransformResult";
+import { IModule, IFile, ITransformResult } from "../Interfaces";
 export declare class TestModule implements IModule {
     Name: string;
     Author: string;
