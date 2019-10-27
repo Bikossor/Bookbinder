@@ -1,5 +1,5 @@
 import { Configurator } from "./Configurator";
-import { IFile } from "./Interfaces/IFile";
+import { IFile } from "./Interfaces";
 import * as fs from 'fs';
 
 export class Reader {

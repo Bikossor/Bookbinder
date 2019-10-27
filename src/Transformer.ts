@@ -1,4 +1,4 @@
-import { IFile } from "./Interfaces/IFile";
+import { IFile } from "./Interfaces";
 import { Configurator } from "./Configurator";
 
 export class Transformer {

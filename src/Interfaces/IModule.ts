@@ -1,5 +1,4 @@
-import { IFile } from "./IFile";
-import { ITransformResult } from "./ITransformResult";
+import { IFile, ITransformResult } from "./";
 
 export interface IModule {
     readonly Name: string;
