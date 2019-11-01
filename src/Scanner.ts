@@ -5,7 +5,7 @@ export class Scanner {
 	/**
 	 * @param Path Path to be scanned at
 	 * @param FileExtension FileExtension to be filtered by
-	 * @returns An array of the file names
+	 * @returns An array of the absolute paths
 	 */
 	public static scanDir(Path: string, FileExtension: string): string[] {
 		var result = new Array<string>();
@@ -23,7 +23,9 @@ export class Scanner {
 		});
 
 		files.forEach(file => {
-			result.push(file.name);
+			result.push(
+				path.join(Path, file.name)
+			);
 		});
 
 		return result;
