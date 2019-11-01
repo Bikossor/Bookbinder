@@ -3,10 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Scanner_1 = require("./Scanner");
 const Reader_1 = require("./Reader");
 const Configurator_1 = require("./Configurator");
+const Transformer_1 = require("./Transformer");
+const Writer_1 = require("./Writer");
 var currentDirectory = process.cwd();
 console.log("-= Bookbinder v0.0.0 by Bikossor =-");
 console.log("Scanning for files...");
-var fileNames = Scanner_1.Scanner.scanDir(currentDirectory, Configurator_1.Configurator.BookbinderFileExtension);
-console.log(`Found ${fileNames.length} file(s)`);
-var files = Reader_1.Reader.readFromFiles(fileNames);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQm9va2JpbmRlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9Cb29rYmluZGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsdUNBQW9DO0FBQ3BDLHFDQUFrQztBQUNsQyxpREFBOEM7QUFHOUMsSUFBSSxnQkFBZ0IsR0FBRyxPQUFPLENBQUMsR0FBRyxFQUFFLENBQUM7QUFFckMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxxQ0FBcUMsQ0FBQyxDQUFDO0FBRW5ELE9BQU8sQ0FBQyxHQUFHLENBQUMsdUJBQXVCLENBQUMsQ0FBQztBQUNyQyxJQUFJLFNBQVMsR0FBYSxpQkFBTyxDQUFDLE9BQU8sQ0FBQyxnQkFBZ0IsRUFBRSwyQkFBWSxDQUFDLHVCQUF1QixDQUFDLENBQUM7QUFDbEcsT0FBTyxDQUFDLEdBQUcsQ0FBQyxTQUFTLFNBQVMsQ0FBQyxNQUFNLFVBQVUsQ0FBQyxDQUFDO0FBRWpELElBQUksS0FBSyxHQUFHLGVBQU0sQ0FBQyxhQUFhLENBQUMsU0FBUyxDQUFDLENBQUMifQ==
+var filePaths = Scanner_1.Scanner.scanDir(currentDirectory, Configurator_1.Configurator.BookbinderFileExtension);
+console.log(`Found ${filePaths.length} file(s)`);
+console.log("Reading files...");
+var files = Reader_1.Reader.readFromFiles(filePaths);
+console.log("Transforming files...");
+var transformedFiles = Transformer_1.Transformer.transform(files);
+console.log("Writing files...");
+Writer_1.Writer.write(transformedFiles);
+console.log("Done!");
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQm9va2JpbmRlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9Cb29rYmluZGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsdUNBQW9DO0FBQ3BDLHFDQUFrQztBQUNsQyxpREFBOEM7QUFFOUMsK0NBQTRDO0FBQzVDLHFDQUFrQztBQUVsQyxJQUFJLGdCQUFnQixHQUFHLE9BQU8sQ0FBQyxHQUFHLEVBQUUsQ0FBQztBQUVyQyxPQUFPLENBQUMsR0FBRyxDQUFDLHFDQUFxQyxDQUFDLENBQUM7QUFFbkQsT0FBTyxDQUFDLEdBQUcsQ0FBQyx1QkFBdUIsQ0FBQyxDQUFDO0FBQ3JDLElBQUksU0FBUyxHQUFhLGlCQUFPLENBQUMsT0FBTyxDQUFDLGdCQUFnQixFQUFFLDJCQUFZLENBQUMsdUJBQXVCLENBQUMsQ0FBQztBQUNsRyxPQUFPLENBQUMsR0FBRyxDQUFDLFNBQVMsU0FBUyxDQUFDLE1BQU0sVUFBVSxDQUFDLENBQUM7QUFFakQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxrQkFBa0IsQ0FBQyxDQUFDO0FBQ2hDLElBQUksS0FBSyxHQUFHLGVBQU0sQ0FBQyxhQUFhLENBQUMsU0FBUyxDQUFDLENBQUM7QUFFNUMsT0FBTyxDQUFDLEdBQUcsQ0FBQyx1QkFBdUIsQ0FBQyxDQUFDO0FBQ3JDLElBQUksZ0JBQWdCLEdBQUcseUJBQVcsQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDLENBQUM7QUFFcEQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxrQkFBa0IsQ0FBQyxDQUFDO0FBQ2hDLGVBQU0sQ0FBQyxLQUFLLENBQUMsZ0JBQWdCLENBQUMsQ0FBQztBQUUvQixPQUFPLENBQUMsR0FBRyxDQUFDLE9BQU8sQ0FBQyxDQUFDIn0=
