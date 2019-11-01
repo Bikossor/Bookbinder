@@ -2,7 +2,10 @@
   "name": "bookbinder",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/Bookbinder.js",
+  "bin": {
+    "bookbinder": "./dist/Bookbinder.js"
+  },
   "scripts": {
     "test": "jest",
     "build": "tsc"
