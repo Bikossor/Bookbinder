@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from "fs";
+import * as path from "path";
 
 export class Scanner {
 	/**
@@ -8,17 +8,17 @@ export class Scanner {
 	 * @returns An array of the absolute paths
 	 */
 	public static scanDir(Path: string, FileExtension: string): string[] {
-		var result = new Array<string>();
+		const result = new Array<string>();
 
 		if (!fs.existsSync(Path)) {
 			return result;
 		}
 
-		var entries: fs.Dirent[] = fs.readdirSync(Path, {
+		const entries: fs.Dirent[] = fs.readdirSync(Path, {
 			withFileTypes: true
 		});
 
-		var files: fs.Dirent[] = entries.filter(_file => {
+		const files: fs.Dirent[] = entries.filter(_file => {
 			return _file.isFile() && path.extname(_file.name) === FileExtension;
 		});
 

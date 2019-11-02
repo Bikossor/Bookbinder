@@ -4,7 +4,7 @@ import { TokenMap } from "./TokenMap";
 
 export class Transformer {
     public static transform(files: IFile[]): Array<IFile> {
-        var result: Array<IFile> = new Array<IFile>();
+        const result: Array<IFile> = new Array<IFile>();
 
         files.forEach(file => {
             result.push({

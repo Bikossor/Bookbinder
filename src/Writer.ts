@@ -1,5 +1,5 @@
 import { IFile } from "./Interfaces";
-import * as fs from 'fs';
+import * as fs from "fs";
 
 export class Writer {
     public static write(files: IFile[]): void {
