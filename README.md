@@ -14,7 +14,7 @@ $ npm install bookbinder -g
 {{ date }}
 {{ time }}
 ```
-See the list of supported tokens [here](/wiki/Tokens).
+See the list of supported tokens [here](https://github.com/Bikossor/Bookbinder/wiki/Tokens).
 
 ## Usage
 - Open your terminal
