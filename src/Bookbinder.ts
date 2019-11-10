@@ -3,10 +3,11 @@ import { Reader } from "./Reader";
 import { Configurator } from "./Configurator";
 import { Transformer } from "./Transformer";
 import { Writer } from "./Writer";
+const bookbinderPckg = require("../package.json");
 
 const currentDirectory = process.cwd();
 
-console.log("-= Bookbinder v0.0.0 by Bikossor =-");
+console.log(`-= Bookbinder ${bookbinderPckg.version} by Bikossor =-`);
 
 console.log("Scanning for files...");
 const filePaths: string[] = Scanner.scanDir(currentDirectory, Configurator.BookbinderFileExtension);
