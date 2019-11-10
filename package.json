@@ -1,7 +1,7 @@
 {
   "name": "bookbinder",
   "version": "0.1.1",
-  "description": "",
+  "description": "Easy-to-use templating for your markdown files.",
   "main": "./dist/Bookbinder.js",
   "bin": {
     "bookbinder": "./dist/Bookbinder.js"
