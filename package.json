@@ -21,7 +21,10 @@
     "book",
     "binder",
     "transform",
-    "replace"
+    "replace",
+    "template",
+    "templating",
+    "cli"
   ],
   "author": "André Lichtenthäler",
   "license": "GPL-3.0",
