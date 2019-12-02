@@ -1,5 +1,6 @@
 const Scanner = require('../dist/Scanner').Scanner;
 const Reader = require('../dist/Reader').Reader;
+const Transformer = require('../dist/Transformer').Transformer;
 
 describe('Scanner', () => {
     test(`scanDir() should return an array with one entry when a valid Path and FileExtension is specified.`, () => {
@@ -43,6 +44,35 @@ describe('Reader', () => {
 
         expect(
             Reader.readFromFiles(filePaths).length
+        ).toBe(0);
+    });
+});
+
+describe('Transformer', () => {
+    test('transform() should return an array with one entry', () => {
+        const filePaths = Scanner.scanDir("./test/", ".book");
+        const files = Reader.readFromFiles(filePaths);
+
+        expect(
+            Transformer.transform(files).length
+        ).toBe(1);
+    });
+
+    test('transform() should return an empty array', () => {
+        const filePaths = Scanner.scanDir("./foo/", ".book");
+        const files = Reader.readFromFiles(filePaths);
+
+        expect(
+            Transformer.transform(files).length
+        ).toBe(0);
+    });
+
+    test('transform() should return an empty array', () => {
+        const filePaths = Scanner.scanDir("./foo/", ".bar");
+        const files = Reader.readFromFiles(filePaths);
+
+        expect(
+            Transformer.transform(files).length
         ).toBe(0);
     });
 });
