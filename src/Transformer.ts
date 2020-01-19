@@ -3,20 +3,22 @@ import { Configurator } from "./Configurator";
 import { TokenMap } from "./TokenMap";
 
 export class Transformer {
-    public static transform(files: IFile[]): Array<IFile> {
+    public static transform(files: Array<IFile>): Array<IFile> {
         const result: Array<IFile> = new Array<IFile>();
 
         files.forEach(file => {
             result.push({
                 Name: file.Name,
-                Content: file.Content.replace(Configurator.TokenRegex, (match, token) => {
-                    var [tokenName, ...tokenArgs] = token.split("\.");
-                    return TokenMap[tokenName](tokenArgs);
-                }),
+                Content: file.Content.replace(Configurator.TokenRegex, this.replace),
                 Lines: []
             });
         });
 
         return result;
+    }
+
+    private static replace(match: string, token: string) {
+        const [tokenName, ...tokenArgs] = token.split("\.");
+        return TokenMap[tokenName](tokenArgs);
     }
 }
