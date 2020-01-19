@@ -10,7 +10,8 @@ export class Transformer {
             result.push({
                 Name: file.Name,
                 Content: file.Content.replace(Configurator.TokenRegex, (match, token) => {
-                    return TokenMap[token]();
+                    var [tokenName, ...tokenArgs] = token.split("\.");
+                    return TokenMap[tokenName](tokenArgs);
                 }),
                 Lines: []
             });
