@@ -3,3 +3,5 @@
 {{ date }}
 {{time}}
 {{ package.name }}
+{{ package.author }}
+{{ package.version }}
