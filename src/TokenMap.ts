@@ -1,4 +1,11 @@
+import {
+    TimeModule,
+    DateModule,
+    PackageModule
+} from "./Modules";
+
 export const TokenMap = {
-    "time": (): string => new Date().toTimeString(),
-    "date": (): string => new Date().toDateString(),
+    "time": (): string => TimeModule.run(),
+    "date": (): string => DateModule.run(),
+    "package": (args: Array<string>): string => PackageModule.run(args),
 }
